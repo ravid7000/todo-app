@@ -108,7 +108,7 @@ const Transition = createSCC<TransitionProps, State>({
 
     const combineClassNames = `${className || ''} ${transitionClass || ''}`.trim()
 
-    return <div className={combineClassNames === '' ? undefined : combineClassNames}>{React.cloneElement(children as any, { transitionState: state.pos })}</div>
+    return <div className={combineClassNames === '' ? undefined : combineClassNames}>{React.cloneElement(children as any)}</div>
   }
 })
 

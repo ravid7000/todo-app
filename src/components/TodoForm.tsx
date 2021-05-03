@@ -31,6 +31,7 @@ const TodoForm = createSCC<TodoFormProps, string, ControllerValue>({
     return (
       <form className="todo-form" onSubmit={ctrlValue.handleSubmit}>
         <input type="text" placeholder="Type and press enter" value={state} onChange={ctrlValue.handleChange} />
+        <button type="submit" className="add-todo-btn" title="Add Todo in current list">ADD</button>
       </form>
     )
   }

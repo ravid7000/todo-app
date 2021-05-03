@@ -24,7 +24,10 @@ body {
 
 input, button {
   font-family: monospace;
-  font-weight: 300;
+}
+
+button {
+  cursor: pointer;
 }
 
 code {
@@ -35,12 +38,16 @@ code {
 .app-title {
   font-size: 4.5rem;
   text-align: center;
-  color: var(--accent-color);
+  color: var(--fg-color);
   margin-bottom: var(--spacing);
 }
 
+.app-logo {
+  width: 40px;
+}
+
 .App {
-  max-width: 550px;
+  max-width: 600px;
   margin-left: auto;
   margin-right: auto;
   min-height: 100vh;
@@ -50,20 +57,37 @@ code {
 }
 
 .todo-form {
-  display: block;
+  display: flex;
+  align-items: center;
 }
 
 .todo-form input {
+  flex: 1;
   display: block;
   width: 100%;
   padding: var(--spacing);
-  font-size: 1.5rem;
+  font-size: 1rem;
   border: 0;
   background-color: transparent;
 }
 
 .todo-form input:focus {
   outline: none;
+}
+
+.todo-form .add-todo-btn, .back-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  outline: none;
+  width: 60px;
+  height: 34px;
+  margin-right: 8px;
+  border: none;
+  background-color: var(--fg-color);
+  color: var(--bg-color);
+  border-radius: 4px;
 }
 
 .todo-item {
@@ -79,7 +103,6 @@ code {
   width: 30px;
   height: 30px;
   border-radius: calc(var(--border-radius) * 2);
-  margin-right: var(--spacing);
   border: 2px solid #c9c9c9;
   cursor: pointer;
 }
@@ -97,12 +120,14 @@ code {
   border: 1px solid #dcdcdc;
   color: var(--bg-light);
   border-radius: var(--border-radius);
+  margin-left: var(--spacing);
 }
 
 .todo-item .todo-title {
   flex: 1;
   word-break: break-word;
   padding-right: var(--spacing);
+  margin-left: var(--spacing);
 }
 
 .todo-item .todo-timestamp {
@@ -131,6 +156,7 @@ code {
   margin: 0;
   border-top: 1px solid #dcdcdc;
   display: flex;
+  font-size: 1rem;
   justify-content: space-between;
 }
 
@@ -140,7 +166,7 @@ code {
   background-color: #ffffff;
   border-radius: 4px;
   overflow: hidden;
-  box-shadow: 0px 3px 6px 0px rgb(0 0 0 / 17%);
+  box-shadow: 0px 1px 2px 0px rgb(0 0 0 / 13%);
   transition: all 0.3s;
 }
 
@@ -203,4 +229,40 @@ code {
 .fadeOut {
   animation-name: slideInUp;
   animation-duration: 0.3s;
+}
+
+@keyframes zoomOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    transform: scale3d(2, 2, 2);
+  }
+}
+
+.zoomOut {
+  animation-name: zoomOut;
+  animation-duration: 0.3s;
+}
+
+.splash {
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.splash img {
+  display: block;
+  max-width: 100%;
+  width: 100px;
 }
