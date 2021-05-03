@@ -1,0 +1,206 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --fg-color: #282c34;
+  --bg-color: #eeeff2;
+  --bg-light: #676d79;
+  --accent-color: hsl(277deg 78% 67%);
+  --spacing: 16px;
+  --border-radius: 8px;
+}
+
+
+body {
+  margin: 0;
+  color: var(--fg-color);
+  font-size: 20px;
+  background-color: var(--bg-color);
+  font-family: monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input, button {
+  font-family: monospace;
+  font-weight: 300;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.app-title {
+  font-size: 4.5rem;
+  text-align: center;
+  color: var(--accent-color);
+  margin-bottom: var(--spacing);
+}
+
+.App {
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 100vh;
+  padding-top: 100px;
+  padding-left: var(--spacing);
+  padding-right: var(--spacing);
+}
+
+.todo-form {
+  display: block;
+}
+
+.todo-form input {
+  display: block;
+  width: 100%;
+  padding: var(--spacing);
+  font-size: 1.5rem;
+  border: 0;
+  background-color: transparent;
+}
+
+.todo-form input:focus {
+  outline: none;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  color: var(--fg-color);
+  padding: var(--spacing);
+  border-top: 1px solid #dcdcdc;
+}
+
+.todo-item .todo-checkbox {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border-radius: calc(var(--border-radius) * 2);
+  margin-right: var(--spacing);
+  border: 2px solid #c9c9c9;
+  cursor: pointer;
+}
+
+.todo-item .todo-btn {
+  background-color: transparent;
+  border: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #dcdcdc;
+  color: var(--bg-light);
+  border-radius: var(--border-radius);
+}
+
+.todo-item .todo-title {
+  flex: 1;
+  word-break: break-word;
+  padding-right: var(--spacing);
+}
+
+.todo-item .todo-timestamp {
+  margin-top: 4px;
+  font-size: 0.9rem;
+  color: var(--bg-light);
+}
+
+.todo-item.done .todo-title {
+  text-decoration: line-through;
+  color: var(--bg-light);
+}
+
+.todo-item.done .todo-checkbox {
+  border-color: transparent;
+}
+
+.todo-item.done .todo-checkbox::before {
+  content: '✅';
+  font-size: 1.7rem;
+  line-height: 1.7rem;
+}
+
+.total-count {
+  padding: var(--spacing);
+  margin: 0;
+  border-top: 1px solid #dcdcdc;
+  display: flex;
+  justify-content: space-between;
+}
+
+.app-wrapper {
+  position: relative;
+  z-index: 10;
+  background-color: #ffffff;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0px 3px 6px 0px rgb(0 0 0 / 17%);
+  transition: all 0.3s;
+}
+
+.app-content {
+  max-height: 400px;
+  overflow: auto;
+}
+
+.fadeIn {
+  animation-name: slideInDown;
+  animation-duration: 0.3s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+.fadeOut {
+  animation-name: slideInUp;
+  animation-duration: 0.3s;
+}
