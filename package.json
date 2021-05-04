@@ -97,9 +97,6 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "workbox-webpack-plugin": "^6.1.5"
-  },
   "jest": {
     "roots": [
       "<rootDir>/src"
