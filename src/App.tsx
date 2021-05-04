@@ -26,7 +26,7 @@ const App = createSCC<unknown, { splash: boolean }, ControllerValue>({
     if (typeof window !== 'undefined') {
       setTimeout(() => {
         state.set({ splash: false })
-      }, 600)
+      }, 900)
     }
 
     return {

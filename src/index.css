@@ -36,7 +36,6 @@ code {
 }
 
 .app-title {
-  font-size: 4.5rem;
   text-align: center;
   color: var(--fg-color);
   margin-bottom: var(--spacing);
@@ -54,6 +53,16 @@ code {
   padding-top: 100px;
   padding-left: var(--spacing);
   padding-right: var(--spacing);
+}
+
+@media (max-width: 580px) {
+  .App {
+    padding-top: 30px;
+  }
+
+  .app-logo {
+    width: 25px;
+  }
 }
 
 .todo-form {
