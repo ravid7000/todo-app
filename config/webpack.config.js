@@ -652,12 +652,12 @@ module.exports = function (webpackEnv) {
             manifest[file.name] = file.path;
             return manifest;
           }, seed);
-          manifestFiles['static/js/server-worker.js'] = '/static/js/server-worker.js'
+          manifestFiles['static/js/service-worker.js'] = '/static/js/service-worker.js'
           const entrypointFiles = entrypoints.main.filter(
             fileName => !fileName.endsWith('.map')
           );
 
-          entrypointFiles.push('static/js/server-worker.js')
+          entrypointFiles.push('static/js/service-worker.js')
 
           return {
             files: manifestFiles,
