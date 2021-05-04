@@ -170,7 +170,7 @@ const App = createSCC<unknown, { splash: boolean }, ControllerValue>({
     return (
       <div className="App">
         <Transition enterTransition='' exitTransition='zoomOut' className="splash" in={state.splash}>
-          <img src={logo} alt="logo" />
+          <img src={logo} alt="logo" width="100" />
         </Transition>
         {!state.splash && (
           <>

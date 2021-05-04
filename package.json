@@ -1,6 +1,12 @@
 {
-  "name": "example",
+  "name": "todo-app",
   "version": "0.1.0",
+  "description": "Small Todo Application",
+  "author": {
+    "email": "ravid7000@gmail.com",
+    "name": "Ravi Dhiman",
+    "url": "https://ravid.dev"
+  },
   "private": true,
   "dependencies": {
     "@babel/core": "7.12.3",
