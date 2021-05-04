@@ -652,12 +652,9 @@ module.exports = function (webpackEnv) {
             manifest[file.name] = file.path;
             return manifest;
           }, seed);
-          manifestFiles['static/js/service-worker.js'] = '/static/js/service-worker.js'
           const entrypointFiles = entrypoints.main.filter(
             fileName => !fileName.endsWith('.map')
           );
-
-          entrypointFiles.push('static/js/service-worker.js')
 
           return {
             files: manifestFiles,
@@ -683,7 +680,7 @@ module.exports = function (webpackEnv) {
           // to make lazy-loading failure scenarios less likely.
           // See https://github.com/cra-template/pwa/issues/13#issuecomment-722667270
           maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
-          swDest: 'static/js/service-worker.js',
+          swDest: 'service-worker.js',
         }),
       // TypeScript type checking
       useTypeScript &&
